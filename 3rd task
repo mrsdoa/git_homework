@@ -20,3 +20,14 @@ def count_lines(file_name, chunk_size=1<<13):
 #        twotxt=count_lines('2.txt'),
 #        thirdtxt=count_lines('3.txt')))
 print(count_lines(file_name))
+
+
+or /////
+
+import glob
+with open('countfile', 'w') as out:
+    list_of_files = glob.glob('./*.txt')
+    for file_name in list_of_files:
+        with open(file_name, 'r') as f:
+            count = sum(1 for line in f)
+            out.write('{c} {f}\n'.format(c = count, f = file_name))

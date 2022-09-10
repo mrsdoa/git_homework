@@ -1,0 +1,26 @@
+import os
+
+filenames = os.listdir(r'/Users/mrs.doa/PycharmProjects/gittest/venv/test')
+#print(filenames)
+perem = []
+for filename in filenames:
+    perem.append(filename)
+print(perem)
+    #with open(file, encoding='utf-8') as filename:
+#        for row in f:
+#            print(len(row))
+
+#Строка номер 1 файла номер 2
+file_name = ','.join(perem)
+print(file_name)
+def count_lines(file_name, chunk_size=1<<13):
+    with open(file_name) as file:
+        return sum(chunk.count('\n')
+                   for chunk in iter(lambda: file.read(chunk_size), ''))
+
+#print('Loaded: {firsttxt} 1txt, {twotxt} 2txt, '
+#      '{thirdtxt} 3txt'.format(
+#        firsttxt=count_lines('1.txt'),
+#        twotxt=count_lines('2.txt'),
+#        thirdtxt=count_lines('3.txt')))
+print(count_lines(file_name))

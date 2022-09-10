@@ -6,11 +6,7 @@ perem = []
 for filename in filenames:
     perem.append(filename)
 print(perem)
-    #with open(file, encoding='utf-8') as filename:
-#        for row in f:
-#            print(len(row))
 
-#Строка номер 1 файла номер 2
 file_name = ','.join(perem)
 print(file_name)
 def count_lines(file_name, chunk_size=1<<13):
